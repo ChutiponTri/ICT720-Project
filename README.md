@@ -1,14 +1,14 @@
 # ict720-project
 Repo for demo idea, and code for ICT720 course 2025
 
-# Our Members
+## Our Members
 1. Chutipon Trirattananurak
 2. Natthapol Sangkool
 3. Kazuma Yoshida
 
-# Domain:
+## Domain:
 
-# Stakeholders
+## Stakeholders
 
 ## User Stories
 1. As a **<ins>professor</ins>**, I want to **know A is in my lab**, so that **I can go and meet A**.
