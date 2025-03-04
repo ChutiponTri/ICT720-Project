@@ -3,7 +3,7 @@ Repo for demo idea, and code for ICT720 course 2025
 
 # Our Members
 1. Chutipon Trirattananurak
-2. Natthapol Saengkul
+2. Natthapol Sangkool
 3. Kazuma Yoshida
 
 # Domain:
