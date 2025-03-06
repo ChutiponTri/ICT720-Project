@@ -60,7 +60,7 @@ Raspberry Pi 3 Model B+
 
 <img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/Tapo.jpg" alt="alt text" width="400">
 
-Tapo Smart Home
+TP-Link Smart Home
 - [About Tapo](https://www.tapo.com/th/)
 - [Tapo P100](https://www.tp-link.com/th/home-networking/smart-plug/tapo-p100/)
 
