@@ -71,3 +71,4 @@ TP-Link Smart Home
 - [About Tapo](https://www.tapo.com/th/)
 - [Tapo P100](https://www.tp-link.com/th/home-networking/smart-plug/tapo-p100/)
 
+## State Diagram
