@@ -52,7 +52,7 @@ T-SIMCAM ESP32-S3 CAM Development Board WiFi Bluetooth 5.0 Wireless Module
 - [Documentation](https://lilygo.cc/products/t-simcam?srsltid=AfmBOoqbCqzsFoeuB6VMgMevYe_R6TFA3whzR2Cuaq5tDpFaRyuv9rE3)
 - [Github Examples](https://github.com/Xinyuan-LilyGO/LilyGo-Camera-Series?spm=a2g0o.detail.1000023.11.135d19533BcRsR)
 
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/tsim.png" alt="alt text" width="400">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/raspi%203.png" alt="alt text" width="400">
 
 Raspberry Pi 3 Model B+
 - [Documentation](https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/)
