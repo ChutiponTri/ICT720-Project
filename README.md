@@ -13,17 +13,13 @@ Repo for demo idea, and code for ICT720 course 2025.
 1. To track wheelchair user motion in real time
     - Utilize M5Capsule to collect motion data and transmit it via Wi-Fi to a server.
     - Store and analyze movement patterns to detect daily activity trends.
-    
 2. To enable proximity-based automation of appliances
     - Use a T-SIM camera to detect M5Capsule’s Bluetooth signal when the user enters or leaves a room.
     - Send commands to a Raspberry Pi, which will control a Tapo smart plug to turn appliances on or off automatically.
-   
-3.To improve safety through inactivity detection
+3. To improve safety through inactivity detection
     - Monitor the user’s movement and send alerts to caregivers if inactivity is detected for an extended period.
-
-4.To optimize energy efficiency in smart homes
+4. To optimize energy efficiency in smart homes
     - Ensure that lights, fans, or other devices only operate when needed, reducing power consumption.
-    
 5. To provide remote monitoring and manual control
     - Develop an interface for caregivers or users to view motion data and manually control appliances if necessary.
 
