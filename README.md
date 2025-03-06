@@ -7,6 +7,21 @@ People with mobility impairments, especially wheelchair users, often face challe
 
 The system works by tracking the wheelchair user’s motion and detecting their proximity to automate appliance control and provide activity monitoring. When the user moves, the M5Capsule transmits motion data via Wi-Fi to a server, allowing caregivers to monitor their daily movement patterns. Additionally, a T-SIM camera detects the wheelchair’s Bluetooth signal and sends commands to a Raspberry Pi, which controls a Tapo smart plug to turn on or off appliances like lights, fans, or TVs.
 
+## Objectives
+The primary goal of this project is to develop a smart motion tracking and environment control system for wheelchair users, leveraging M5Capsule, T-SIM camera, Raspberry Pi, and Tapo smart plug. The system aims to enhance accessibility, safety, and energy efficiency. The specific objectives are:
+1. To track wheelchair user motion in real time
+- Utilize M5Capsule to collect motion data and transmit it via Wi-Fi to a server.
+- Store and analyze movement patterns to detect daily activity trends.
+2. To enable proximity-based automation of appliances
+- Use a T-SIM camera to detect M5Capsule’s Bluetooth signal when the user enters or leaves a room.
+- Send commands to a Raspberry Pi, which will control a Tapo smart plug to turn appliances on or off automatically.
+3.To improve safety through inactivity detection
+- Monitor the user’s movement and send alerts to caregivers if inactivity is detected for an extended period.
+4.To optimize energy efficiency in smart homes
+- Ensure that lights, fans, or other devices only operate when needed, reducing power consumption.
+5. To provide remote monitoring and manual control
+- Develop an interface for caregivers or users to view motion data and manually control appliances if necessary.
+
 ## Our Members
 1. Chutipon Trirattananurak
 2. Natthapol Sangkool
