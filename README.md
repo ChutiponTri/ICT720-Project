@@ -57,3 +57,10 @@ T-SIMCAM ESP32-S3 CAM Development Board WiFi Bluetooth 5.0 Wireless Module
 Raspberry Pi 3 Model B+
 - [Documentation](https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/)
 - [Getting Started](https://www.raspberrypi.com/documentation/computers/getting-started.html)
+
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/Tapo_P100.jpg" alt="alt text" width="400">
+
+Tapo Smart Home
+- [About Tapo](https://www.tapo.com/th/)
+- [Tapo P100](https://www.tp-link.com/th/home-networking/smart-plug/tapo-p100/)
+
