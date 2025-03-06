@@ -9,6 +9,7 @@ Repo for demo idea, and code for ICT720 course 2025.
 
 ## Objectives
 <p>&nbsp;&nbsp;&nbsp;&nbsp;The primary goal of this project is to develop a smart motion tracking and environment control system for wheelchair users, leveraging M5Capsule, T-SIM camera, Raspberry Pi, and Tapo smart plug. The system aims to enhance accessibility, safety, and energy efficiency. The specific objectives are:</p>
+
 1. To track wheelchair user motion in real time
     - Utilize M5Capsule to collect motion data and transmit it via Wi-Fi to a server.
     - Store and analyze movement patterns to detect daily activity trends.
