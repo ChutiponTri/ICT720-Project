@@ -40,7 +40,7 @@ The primary goal of this project is to develop a smart motion tracking and envir
 5. As a **<ins>wheelchair user</ins>**, I want to be **able to manually turn appliances on/off** via a smartphone app so that I have control when needed.
 
 ## Hardware
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/m5capsule.png" alt="alt text" width="300">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/m5capsule.png" alt="alt text" width="400">
 
 M5Stack Capsule Kit w/ M5StampS3 ( M5Stack Capsule Kit w/ M5StampS3)
 - [Documentation](https://docs.m5stack.com/en/core/M5Capsule)
