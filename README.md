@@ -1,4 +1,4 @@
-# ict720-project
+# Onii-Chan
 Repo for demo idea, and code for ICT720 course 2025
 
 ## Our Members
