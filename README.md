@@ -42,5 +42,5 @@ The primary goal of this project is to develop a smart motion tracking and envir
 ## Hardware
 ![alt text](https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/m5capsule.png)
 M5Stack Capsule Kit w/ M5StampS3 ( M5Stack Capsule Kit w/ M5StampS3)
-- [Documentation](https://docs.m5stack.com/en/core/m5stickc)
+- [Documentation](https://docs.m5stack.com/en/core/M5Capsule)
 - [6-Axis IMU BMI270](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/core/MPU-6886-000193%2Bv1.1_GHIC_en.pdf)
