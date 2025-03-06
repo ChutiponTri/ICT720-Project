@@ -39,7 +39,7 @@ The primary goal of this project is to develop a smart motion tracking and envir
 4. As a **<ins>caregiver</ins>**, I want to **receive an alert if the wheelchair user** has been inactive for too long so that I can check on their well-being.
 5. As a **<ins>wheelchair user</ins>**, I want to be **able to manually turn appliances on/off** via a smartphone app so that I have control when needed.
 
-## Hardware
+## Hardwares
 <img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/m5capsule.png" alt="alt text" width="400">
 
 M5Stack Capsule Kit w/ M5StampS3 ( M5Stack Capsule Kit w/ M5StampS3)
