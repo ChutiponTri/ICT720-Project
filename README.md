@@ -73,6 +73,7 @@ TP-Link Smart Home
 
 ## System Architecture
 <img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/system_architecture.png" alt="alt text" width="600">
+
 1. Motion Tracking & Activity Monitoring
     - M5Capsule: Attaches to the wheelchair and collects motion data.
     - Wi-Fi Transmission: Sends motion data to a cloud server.
