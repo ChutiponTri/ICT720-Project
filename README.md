@@ -72,6 +72,7 @@ TP-Link Smart Home
 - [Tapo P100](https://www.tp-link.com/th/home-networking/smart-plug/tapo-p100/)
 
 ## System Architecture
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/system_architecture.png" alt="alt text" width="600">
 1. Motion Tracking & Activity Monitoring
     - M5Capsule: Attaches to the wheelchair and collects motion data.
     - Wi-Fi Transmission: Sends motion data to a cloud server.
@@ -88,7 +89,10 @@ TP-Link Smart Home
   
 4. Remote Monitoring & Manual Control
     - Cloud Dashboard/App: Allows caregivers and users to view motion data.
-    - Manual Appliances Control: Users can turn appliances on/off through a smartphone app.  
+    - Manual Appliances Control: Users can turn appliances on/off through a smartphone app.
+
+## Software Architecture
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/software_architecture.png" alt="alt text" width="600">
 ## State Diagram
 
 ## Sequence Diagram
