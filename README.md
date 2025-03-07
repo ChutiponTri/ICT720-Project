@@ -77,16 +77,13 @@ TP-Link Smart Home
     - M5Capsule: Attaches to the wheelchair and collects motion data.
     - Wi-Fi Transmission: Sends motion data to a cloud server.
     - Data Storage & Analysis: Tracks movement patterns and detects inactivity.
-
 2. Proximity-Based Automation
     - T-SIM camera: Detects the wheelchair's Bluetooth signal when entering/leaving a aroom.
     - Raspberry Pi: Receives signals and processes automation commands.
     - Tapo Smart Plug: Controls home appliances (light, fan, TV, etc.).
-
 3. Safety & Energy Efficiency
     - Inactivity Alerts: If no movement is detected for an extended period, an alert sent to caregivers.
     - Smart Power Management: Appliances turn off automatically when the user exits a room.
-  
 4. Remote Monitoring & Manual Control
     - Cloud Dashboard/App: Allows caregivers and users to view motion data.
     - Manual Appliances Control: Users can turn appliances on/off through a smartphone app.
