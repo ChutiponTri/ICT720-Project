@@ -93,6 +93,7 @@ TP-Link Smart Home
 
 ## Software Architecture
 <img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/software_architecture.png" alt="alt text" width="600">
+
 ## State Diagram
 
 ## Sequence Diagram
