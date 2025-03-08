@@ -93,10 +93,12 @@ TP-Link Smart Home
 <img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/software_architecture.png" alt="alt text" width="600">
 
 ## State Diagram
+### 1. M5Capsule State Diagram
 <img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/m5capsule_state_diagram.png" alt="alt text" width="400">
+### 2. T-SIMCAM State Diagram
 <img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/t_simcam_state_diagram.png" alt="alt text" width="400">
+### 3. Raspberry Pi State Diagram
 <img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/raspberry_pi_state_diagram.png" alt="alt text" width="400">
-
 
 ## Sequence Diagram
 
