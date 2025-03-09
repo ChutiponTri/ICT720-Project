@@ -30,12 +30,12 @@ Repo for demo idea, and code for ICT720 course 2025.
 
 ## Stakeholders
 ### Primary Stakeholders:
-    - Wheelchair Users – Benefit from automated control and activity monitoring.
-    - Elderly Individuals – Gain enhanced accessibility and safety at home.
-    - Caregivers – Monitor the user’s activity and receive alerts in case of emergencies.
+- Wheelchair Users – Benefit from automated control and activity monitoring.
+- Elderly Individuals – Gain enhanced accessibility and safety at home.
+- Caregivers – Monitor the user’s activity and receive alerts in case of emergencies.
 ### Secondary Stakeholders:
-    - Medical Professionals – Can analyze movement data for health insights.
-    - Home Automation Developers – Can improve and expand the system’s functionalities.
+- Medical Professionals – Can analyze movement data for health insights.
+- Home Automation Developers – Can improve and expand the system’s functionalities.
 
 ## User Stories
 1. As a **<ins>wheelchair user</ins>**, I want my **motion data to be tracked and stored** on a server so that I can monitor my daily activity and caregivers can check for unusual patterns.
