@@ -103,6 +103,7 @@ TP-Link Smart Home
 <img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/raspberry_pi_state_diagram.png" alt="alt text" width="400">
 
 ## Sequence Diagram
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/sequence_diagram.png" alt="alt text" width="600">
 
 ## Data Flow Process
 
