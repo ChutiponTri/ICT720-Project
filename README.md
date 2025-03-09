@@ -113,3 +113,10 @@ TP-Link Smart Home
 <img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/data_flow.png" alt="alt text" width="600">
 
 ## Data Modeling
+
+## Benefits of the System
+- Enhanced Accessibility – Provides independent appliance control for wheelchair users.
+- Improved Safety – Alerts caregivers if the user is inactive for a long period.
+- Energy Efficiency – Reduces electricity consumption by turning off unused appliances.
+- Caregiver Assistance – Allows remote monitoring to ensure user well-being.
+- Data-Driven Insights – Tracks long-term activity patterns to help in health analysis.
