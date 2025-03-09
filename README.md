@@ -24,9 +24,9 @@ Repo for demo idea, and code for ICT720 course 2025.
     - Develop an interface for caregivers or users to view motion data and manually control appliances if necessary.
 
 ## Our Members
-1. Chutipon Trirattananurak
-2. Natthapol Sangkool
-3. Kazuma Yoshida
+1. Chutipon Trirattananurak ID: 6722040786 (chutipon.trir@gmail.com)
+2. Natthapol Sangkool ID: 6722040679 (petch.grenger@gmail.com)
+3. Kazuma Yoshida ID: Institute of Science Tokyo
 
 ## Stakeholders
 1. Wheelchair User
