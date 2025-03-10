@@ -63,7 +63,9 @@ void setup(void) {
 
   // Setup WiFi and MQTT
   setup_wifi();
+  String name = "M5Capsule-Client-" + String(random(0xffff), HEX);
   client.setServer(mqtt_server, mqtt_port);
+  client.connect(name.c_str());
   client.setCallback(callback);
 }
  
@@ -161,9 +163,10 @@ void callback(char* topic, byte* payload, unsigned int length) {
 
 // Function to Reconnect MQTT
 void reconnect(void) {
+  String name = "M5Capsule-Client-" + String(random(0xffff), HEX);
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
-    if (client.connect("M5StickC-Client")) {
+    if (client.connect(name.c_str())) {
       Serial.println("connected");
       client.subscribe(topic);
     } else {
