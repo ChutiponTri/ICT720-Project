@@ -3,10 +3,15 @@
 #include <Wire.h>
 #include <SparkFun_BMI270_Arduino_Library.h>
 #include <WiFi.h>
+#include <BLEDevice.h>
+#include <BLEUtils.h>
+#include <BLEServer.h>
 #include <esp_log.h>
 #include <PubSubClient.h>
 
 #define TAG "main"
+#define SERVICE_UUID        "4fafc201-1fb5-459e-8fcc-c5c9c331914b"
+#define CHARACTERISTIC_UUID "beb5483e-36e1-4688-b7f5-ea07361b26a8"
 
 // Initialize Variables
 const char* ssid = "EZEKIEL";
@@ -16,9 +21,10 @@ const char* topic = "ton/server/m5";
 const int mqtt_port = 1883;
 
 // Function Declaration
-void setup_wifi();
+void setup_ble(void);
+void setup_wifi(void);
 void callback(char* topic, byte* payload, unsigned int length);
-void reconnect();
+void reconnect(void);
 
 // Initialize WiFi
 WiFiClient espClient;
@@ -42,7 +48,7 @@ struct IMUData{
 IMUData data_buf[5];
 int data_count = 0;
 
-void setup() {
+void setup(void) {
   // Begin Serial
   Serial.begin(115200);
 
@@ -52,13 +58,16 @@ void setup() {
   Wire.begin(8, 10, 400000); // Initialize I2C communication with SDA pin 8 and SCL pin 10 at 400kHz
   m5IMU.beginI2C(i2cAddress);
 
-  // Set Up Wifi
+  // Setup BLE
+  setup_ble();
+
+  // Setup WiFi and MQTT
   setup_wifi();
   client.setServer(mqtt_server, mqtt_port);
-  // client.setCallback(callback);
+  client.setCallback(callback);
 }
  
-void loop() {
+void loop(void) {
   if (!client.connected()){
     reconnect();
   }
@@ -76,26 +85,6 @@ void loop() {
   data_count++;
 
   if (data_count >= 5) {
-    // char buf[] = "{ax:[1.02,1.02,1.02,1.02,1.02,1.02,1.02,1.02,1.02,1.02],ay:[1.02,1.02,1.02,1.02,1.02,1.02,1.02,1.02,1.02,1.02],az:[1.02,1.02,1.02,1.02,1.02,1.02,1.02,1.02,1.02,1.02]}";
-    // Serial.printf("%d",sizeof(buf));
-    // Create JSON Object
-    // JsonDocument doc;
-    // JsonArray axArray = doc.createNestedArray("ax");
-    // JsonArray ayArray = doc.createNestedArray("ay");
-    // JsonArray azArray = doc.createNestedArray("az");
-    // JsonArray gxArray = doc.createNestedArray("gx");
-    // JsonArray gyArray = doc.createNestedArray("gy");
-    // JsonArray gzArray = doc.createNestedArray("gz");
-
-    // for (int i = 0; i < 10; i++) {
-    //   axArray.add(data_buf[i].accelX);
-    //   ayArray.add(data_buf[i].accelY);
-    //   azArray.add(data_buf[i].accelZ);
-    //   gxArray.add(data_buf[i].gyroX);
-    //   gyArray.add(data_buf[i].gyroY);
-    //   gzArray.add(data_buf[i].gyroZ);
-    // }
-
     char buf[256]; // Make sure the buffer is large enough
     snprintf(buf, sizeof(buf),
              "{\"axm\":[%.2f,%.2f,%.2f,%.2f,%.2f],"
@@ -111,18 +100,6 @@ void loop() {
              data_buf[0].gyroY, data_buf[1].gyroY, data_buf[2].gyroY, data_buf[3].gyroY, data_buf[4].gyroY,
              data_buf[0].gyroZ, data_buf[1].gyroZ, data_buf[2].gyroZ, data_buf[3].gyroZ, data_buf[4].gyroZ
     );
-  // // Create JSON Object
-  // StaticJsonDocument<200> doc;
-  // doc["accelX"] = m5IMU.data.accelX;
-  // doc["accelY"] = m5IMU.data.accelY;
-  // doc["accelZ"] = m5IMU.data.accelZ;
-  // doc["gyroX"] = m5IMU.data.gyroX;
-  // doc["gyroY"] = m5IMU.data.gyroY;
-  // doc["gyroZ"] = m5IMU.data.gyroZ;
-
-  // char buf[256];
-  // // snprintf(buf, sizeof(buf), "{\"demo\":\"%.2f,%.2f,%.2f,%.2f,%.2f,%.2f\"}", m5IMU.data.accelX, m5IMU.data.accelY, m5IMU.data.accelZ, m5IMU.data.gyroX, m5IMU.data.gyroY, m5IMU.data.gyroZ);
-  // serializeJson(doc, buf);
 
     if (client.publish(topic, buf)) {
       Serial.println("Publish successful!");
@@ -135,8 +112,27 @@ void loop() {
   delay(100);
 }
 
-// Function To Setup WiFi
-void setup_wifi() {
+// Function to Setup BLE
+void setup_ble(void) {
+  BLEDevice::init("M5Capsule");
+  BLEServer *pServer = BLEDevice::createServer();
+  BLEService *pService = pServer->createService(SERVICE_UUID);
+  BLECharacteristic *pCharacteristic =
+    pService->createCharacteristic(CHARACTERISTIC_UUID, BLECharacteristic::PROPERTY_READ | BLECharacteristic::PROPERTY_WRITE);
+
+  pCharacteristic->setValue("Hello World says Neil");
+  pService->start();
+  // BLEAdvertising *pAdvertising = pServer->getAdvertising();  // this still is working for backward compatibility
+  BLEAdvertising *pAdvertising = BLEDevice::getAdvertising();
+  pAdvertising->addServiceUUID(SERVICE_UUID);
+  pAdvertising->setScanResponse(true);
+  pAdvertising->setMinPreferred(0x06);  // functions that help with iPhone connections issue
+  pAdvertising->setMinPreferred(0x12);
+  BLEDevice::startAdvertising();
+}
+
+// Function to Setup WiFi
+void setup_wifi(void) {
   delay(10);
   Serial.println();
   Serial.print("Connecting to ");
@@ -152,7 +148,7 @@ void setup_wifi() {
   Serial.println(WiFi.localIP());
 }
 
-// Function To Callback
+// Callback Function for MQTT
 void callback(char* topic, byte* payload, unsigned int length) {
   Serial.print("Message arrived [");
   Serial.print(topic);
@@ -163,7 +159,8 @@ void callback(char* topic, byte* payload, unsigned int length) {
   Serial.println();
 }
 
-void reconnect() {
+// Function to Reconnect MQTT
+void reconnect(void) {
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
     if (client.connect("M5StickC-Client")) {
