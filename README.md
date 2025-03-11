@@ -26,7 +26,7 @@ Repo for demo idea, and code for ICT720 course 2025.
 ## Our Members
 1. Chutipon Trirattananurak ID: 6722040786 (chutipon.trir@gmail.com)
 2. Natthapol Sangkool ID: 6722040679 (petch.grenger@gmail.com)
-3. Kazuma Yoshida ID: Institute of Science Tokyo
+3. Kazuma Yoshida ID: Institute of Science Tokyo (kazu0706tokyotech@gmail.com)
 
 ## Stakeholders
 ### Primary Stakeholders:
