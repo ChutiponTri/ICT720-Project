@@ -111,7 +111,7 @@ void loop(void) {
       doc["status"] = "in";
       serializeJson(doc, pub);
       client.publish(post_topic, pub);
-      Serial.println("Inside Living Room");
+      Serial.println("Inside room");
     }
   } else if ((neg_count > 0) && (neg_count != temp)){
     temp = neg_count;
@@ -120,7 +120,7 @@ void loop(void) {
       doc["status"] = "out";
       serializeJson(doc, pub);
       client.publish(post_topic, pub);
-      Serial.println("Outside Living Room");
+      Serial.print("Outside room");
     }
   } else {
     not_found += (not_found > 2) ? 0 : 1;
@@ -134,7 +134,7 @@ void loop(void) {
         doc["status"] = "out";
         serializeJson(doc, pub);
         client.publish(post_topic, pub);
-        Serial.println("Outside Living Room");
+        Serial.println("Outside room");
       }
     }
   }
