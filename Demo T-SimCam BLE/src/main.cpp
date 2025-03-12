@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <ArduinoJson.h>
 #include <BLEDevice.h>
 #include <BLEUtils.h>
 #include <BLEScan.h>
@@ -6,7 +7,6 @@
 #include <WiFi.h>
 #include <PubSubClient.h>
 #include <HTTPClient.h>
-#include <ArduinoJson.h>
 
 #define SERVICE_UUID           "6E400001-B5A3-F393-E0A9-E50E24DCCA9E"  // UART service UUID
 #define CHARACTERISTIC_UUID_RX "6E400002-B5A3-F393-E0A9-E50E24DCCA9E"
@@ -18,7 +18,7 @@
 // #define mqtt_broker "homeassistant.local"
 #define mqtt_port 1883
 #define config "tensai"
-#define post_topic "ton/server/post"
+#define post_topic "ton/server/devices"
 #define get_topic "ton/server/get"
 
 void setup_wifi(void);
@@ -39,6 +39,8 @@ int temp;
 uint8_t not_found = 0;
 
 char buf[128];
+char pub[128];
+JsonDocument doc;
 
 class MyAdvertisedDeviceCallbacks : public BLEAdvertisedDeviceCallbacks {
   void onResult(BLEAdvertisedDevice advertisedDevice) {
@@ -72,12 +74,15 @@ void setup(void) {
   setup_wifi();
   setup_mqtt();
 
-  BLEDevice::init("Classroom");
+  // Living Room & Bedroom
+  BLEDevice::init("Living Room");
   pBLEScan = BLEDevice::getScan();  //create new scan
   pBLEScan->setAdvertisedDeviceCallbacks(new MyAdvertisedDeviceCallbacks());
   pBLEScan->setActiveScan(true);  //active scan uses more power, but get results faster
   pBLEScan->setInterval(100);
   pBLEScan->setWindow(99);  // less or equal setInterval value
+
+  doc["room"] = "Living Room";
 
 }
 
@@ -103,15 +108,19 @@ void loop(void) {
     temp = dev_count;
     if (!sent){
       sent = true;
-      client.publish(post_topic, "Classroom");
-      Serial.println("Classroom");
+      doc["status"] = "in";
+      serializeJson(doc, pub);
+      client.publish(post_topic, pub);
+      Serial.println("Inside Living Room");
     }
   } else if ((neg_count > 0) && (neg_count != temp)){
     temp = neg_count;
     if (sent){
       sent = false;
-      client.publish(post_topic, "Not Classroom");
-      Serial.println("Not Classroom");
+      doc["status"] = "out";
+      serializeJson(doc, pub);
+      client.publish(post_topic, pub);
+      Serial.println("Outside Living Room");
     }
   } else {
     not_found += (not_found > 2) ? 0 : 1;
@@ -122,8 +131,10 @@ void loop(void) {
         sent = false;
         dev_count = 0;
         neg_count = 0;
-        client.publish(post_topic, "Not Classroom");
-        Serial.println("Sent Not Classroom");
+        doc["status"] = "out";
+        serializeJson(doc, pub);
+        client.publish(post_topic, pub);
+        Serial.println("Outside Living Room");
       }
     }
   }
