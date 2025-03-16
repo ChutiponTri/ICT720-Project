@@ -48,7 +48,6 @@ class MyAdvertisedDeviceCallbacks : public BLEAdvertisedDeviceCallbacks {
     std::string name = advertisedDevice.getName().c_str();
     int rssi = advertisedDevice.getRSSI();
     if (name.find("M5") != std::string::npos){
-      BLEDevice::getScan()->stop();
       not_found = 0;
       Serial.print(name.c_str());
       Serial.print(" ");
