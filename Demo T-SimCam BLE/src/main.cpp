@@ -20,6 +20,7 @@
 #define config "tensai"
 #define post_topic "ton/server/devices"
 #define get_topic "ton/server/get"
+#define room "Living Room"
 
 void setup_wifi(void);
 void setup_mqtt(void);
@@ -75,15 +76,14 @@ void setup(void) {
   setup_mqtt();
 
   // Living Room & Bedroom
-  BLEDevice::init("Living Room");
+  BLEDevice::init(room);
   pBLEScan = BLEDevice::getScan();  //create new scan
   pBLEScan->setAdvertisedDeviceCallbacks(new MyAdvertisedDeviceCallbacks());
   pBLEScan->setActiveScan(true);  //active scan uses more power, but get results faster
   pBLEScan->setInterval(100);
   pBLEScan->setWindow(99);  // less or equal setInterval value
 
-  doc["room"] = "Living Room";
-
+  doc["room"] = room;
 }
 
 void loop(void) {
@@ -154,7 +154,7 @@ void setup_wifi(void){
 // Function to Setup MQTT
 void setup_mqtt(void){
   client.setServer(mqtt_broker, mqtt_port);
-  String clientName = "Alient-" + String(random(0xffff), HEX);
+  String clientName = "ClientName-" + String(random(0xffff), HEX);
   client.connect(clientName.c_str(), config, config);
   client.setCallback(callback_mqtt);
   client.subscribe(get_topic);
@@ -191,4 +191,3 @@ void reconnect_mqtt(void){
     }
   }
 }
-
