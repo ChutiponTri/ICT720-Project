@@ -94,7 +94,7 @@ TP-Link Smart Home
     - Manual Appliances Control: Users can turn appliances on/off through a smartphone app.
 
 ## Software Architecture
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/software_architecture.png" alt="alt text" width="600">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/software_architectur.png" alt="alt text" width="600">
 
 ## State Diagram
 ### 1. M5Capsule State Diagram
