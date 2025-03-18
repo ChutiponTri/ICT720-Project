@@ -69,14 +69,14 @@ Raspberry Pi 3 Model B+
 
 ---
 
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/Tapo.jpg" alt="alt text" width="400">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/Tapo.jpg" alt="alt text" width="400">
 
 TP-Link Smart Home
 - [About Tapo](https://www.tapo.com/th/)
 - [Tapo P100](https://www.tp-link.com/th/home-networking/smart-plug/tapo-p100/)
 
 ## System Architecture
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/system_architecture.png" alt="alt text" width="600">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/system_architecture.png" alt="alt text" width="600">
 
 1. Motion Tracking & Activity Monitoring
     - M5Capsule: Attaches to the wheelchair and collects motion data.
@@ -94,26 +94,26 @@ TP-Link Smart Home
     - Manual Appliances Control: Users can turn appliances on/off through a smartphone app.
 
 ## Software Architecture
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/software_arch.png" alt="alt text" width="600">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/software_arch.png" alt="alt text" width="600">
 
 ## State Diagram
 ### 1. M5Capsule State Diagram
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/m5capsule_state_diagram.png" alt="alt text" width="400">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/m5capsule_state_diagram.png" alt="alt text" width="400">
 
 ### 2. T-SIMCAM State Diagram
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/t_simcam_state_diagram.png" alt="alt text" width="400">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/t_simcam_state_diagram.png" alt="alt text" width="400">
 
 ### 3. Raspberry Pi State Diagram
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/raspberry_pi_state_diagram.png" alt="alt text" width="400">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/raspberry_pi_state_diagram.png" alt="alt text" width="400">
 
 ## Sequence Diagram
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/sequence_diagram.png" alt="alt text" width="600">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/sequence_diagram.png" alt="alt text" width="600">
 
 ## Data Flow Process
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/data_flow.png" alt="alt text" width="600">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/data_flow.png" alt="alt text" width="600">
 
 ## Data Modeling
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/Data%20Modeling.PNG" alt="alt text" width="600">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/Data%20Modeling.PNG" alt="alt text" width="600">
 
 ## Benefits of the System
 - Enhanced Accessibility – Provides independent appliance control for wheelchair users.
