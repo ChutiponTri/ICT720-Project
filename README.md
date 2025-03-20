@@ -53,7 +53,7 @@ M5Stack Capsule Kit w/ M5StampS3 ( M5Stack Capsule Kit w/ M5StampS3)
 
 ---
 
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/tsim.png" alt="alt text" width="400">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/tsim.png" alt="alt text" width="400">
 
 T-SIMCAM ESP32-S3 CAM Development Board WiFi Bluetooth 5.0 Wireless Module
 - [Documentation](https://lilygo.cc/products/t-simcam?srsltid=AfmBOoqbCqzsFoeuB6VMgMevYe_R6TFA3whzR2Cuaq5tDpFaRyuv9rE3)
@@ -61,7 +61,7 @@ T-SIMCAM ESP32-S3 CAM Development Board WiFi Bluetooth 5.0 Wireless Module
 
 ---
 
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/raspi%203.png" alt="alt text" width="400">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/raspi%203.png" alt="alt text" width="400">
 
 Raspberry Pi 3 Model B+
 - [Documentation](https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/)
