@@ -21,6 +21,7 @@
 #define post_topic "ton/server/devices"
 #define get_topic "ton/server/get"
 #define room "Living Room"
+#define dev_name "M5"
 
 void setup_wifi(void);
 void setup_mqtt(void);
@@ -30,7 +31,7 @@ void reconnect_mqtt(void);
 WiFiClient espclient;
 PubSubClient client(espclient);
 
-int scanTime = 5;  //In seconds
+int scanTime = 2;  //In seconds
 BLEScan *pBLEScan;
 bool sent = false;
 uint8_t dev_count = 0;
@@ -46,8 +47,9 @@ JsonDocument doc;
 class MyAdvertisedDeviceCallbacks : public BLEAdvertisedDeviceCallbacks {
   void onResult(BLEAdvertisedDevice advertisedDevice) {
     std::string name = advertisedDevice.getName().c_str();
-    int rssi = advertisedDevice.getRSSI();
-    if (name.find("M5") != std::string::npos){
+    if (name.find(dev_name) != std::string::npos){
+      int rssi = advertisedDevice.getRSSI();
+      BLEDevice::getScan()->stop();
       not_found = 0;
       Serial.print(name.c_str());
       Serial.print(" ");
@@ -190,3 +192,4 @@ void reconnect_mqtt(void){
     }
   }
 }
+
