@@ -61,10 +61,10 @@ T-SIMCAM ESP32-S3 CAM Development Board WiFi Bluetooth 5.0 Wireless Module
 
 ---
 
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/raspi%203.png" alt="alt text" width="400">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/pi400.png" alt="alt text" width="400">
 
-Raspberry Pi 3 Model B+
-- [Documentation](https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/)
+Raspberry Pi 400
+- [Documentation](https://www.raspberrypi.com/products/raspberry-pi-400/)
 - [Getting Started](https://www.raspberrypi.com/documentation/computers/getting-started.html)
 
 ---
