@@ -137,7 +137,7 @@ TP-Link Smart Home
 5. Edge AI for Proximity Detection Optimization
     - Train an AI model to enhance Bluetooth-based proximity detection, reducing false activations.
 
-<img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/wheelchair.png" alt="alt text" width="600">
+<img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/wheelchair.png" alt="alt text" width="400">
 
 ## Conclusion
 <p>&nbsp;&nbsp;&nbsp;&nbsp;This project aims to enhance the quality of life for wheelchair users by integrating motion tracking, proximity-based automation, and smart home control. By leveraging AI in future iterations, the system can provide predictive analytics, fall detection, and adaptive automation, further improving safety, accessibility, and energy efficiency.</p>
