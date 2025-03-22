@@ -143,3 +143,5 @@ TP-Link Smart Home
 <p>&nbsp;&nbsp;&nbsp;&nbsp;This project aims to enhance the quality of life for wheelchair users by integrating motion tracking, proximity-based automation, and smart home control. By leveraging AI in future iterations, the system can provide predictive analytics, fall detection, and adaptive automation, further improving safety, accessibility, and energy efficiency.</p>
 
 ![Vision](https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/Falling.gif)
+
+![Vision](https://github.com/ChutiponTri/ict720-project/blob/main/images/Grafana.gif)
