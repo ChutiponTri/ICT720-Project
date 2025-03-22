@@ -150,3 +150,5 @@ TP-Link Smart Home
 
 ![Vision](https://github.com/ChutiponTri/ict720-project/blob/main/images/go%20around.gif)
 
+![Vision](https://github.com/ChutiponTri/ict720-project/blob/main/images/Light%20Switch.gif)
+
