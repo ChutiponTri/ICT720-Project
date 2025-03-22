@@ -20,13 +20,14 @@
 #define config "tensai"
 #define post_topic "ton/server/devices"
 #define get_topic "ton/server/get"
-#define room "Living Room"
+#define room "Bedroom"
 #define dev_name "M5"
 
 void setup_wifi(void);
 void setup_mqtt(void);
 void callback_mqtt(char* topic, byte* payload, unsigned int length);
 void reconnect_mqtt(void);
+void publish_mqtt(const char* status);
 
 WiFiClient espclient;
 PubSubClient client(espclient);
@@ -41,12 +42,11 @@ int temp;
 uint8_t not_found = 0;
 
 char buf[128];
-char pub[128];
-JsonDocument doc;
 
 class MyAdvertisedDeviceCallbacks : public BLEAdvertisedDeviceCallbacks {
   void onResult(BLEAdvertisedDevice advertisedDevice) {
     std::string name = advertisedDevice.getName().c_str();
+    if (name.empty()) return;  // Skip if name is empty or invalid
     if (name.find(dev_name) != std::string::npos){
       int rssi = advertisedDevice.getRSSI();
       BLEDevice::getScan()->stop();
@@ -83,11 +83,11 @@ void setup(void) {
   pBLEScan->setActiveScan(true);  //active scan uses more power, but get results faster
   pBLEScan->setInterval(100);
   pBLEScan->setWindow(99);  // less or equal setInterval value
-
-  doc["room"] = room;
 }
 
 void loop(void) {
+  Serial.print("Free Heap: ");
+  Serial.println(ESP.getFreeHeap());
   pBLEScan->start(scanTime, false);
   pBLEScan->clearResults();
   while (WiFi.status() != WL_CONNECTED){
@@ -109,19 +109,13 @@ void loop(void) {
     temp = dev_count;
     if (!sent){
       sent = true;
-      doc["status"] = "in";
-      serializeJson(doc, pub);
-      client.publish(post_topic, pub);
-      Serial.println("Inside room");
+      publish_mqtt("in");
     }
   } else if ((neg_count > 0) && (neg_count != temp)){
     temp = neg_count;
     if (sent){
       sent = false;
-      doc["status"] = "out";
-      serializeJson(doc, pub);
-      client.publish(post_topic, pub);
-      Serial.print("Outside room");
+      publish_mqtt("out");
     }
   } else {
     not_found += (not_found > 2) ? 0 : 1;
@@ -132,10 +126,7 @@ void loop(void) {
         sent = false;
         dev_count = 0;
         neg_count = 0;
-        doc["status"] = "out";
-        serializeJson(doc, pub);
-        client.publish(post_topic, pub);
-        Serial.println("Outside room");
+        publish_mqtt("out");
       }
     }
   }
@@ -191,5 +182,18 @@ void reconnect_mqtt(void){
       delay(5000);
     }
   }
+}
+
+// Function to Publish MQTT
+void publish_mqtt(const char* status) {
+  JsonDocument doc;
+  doc["room"] = room;
+  doc["status"] = status;
+
+  char pub[128];
+  serializeJson(doc, pub);
+  client.publish(post_topic, pub);
+
+  Serial.printf("%sside Room\n", status);
 }
 
