@@ -145,3 +145,5 @@ TP-Link Smart Home
 ![Vision](https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/Falling.gif)
 
 ![Vision](https://github.com/ChutiponTri/ict720-project/blob/main/images/Grafana.gif)
+
+![Vision](https://github.com/ChutiponTri/ict720-project/blob/main/images/Vision%20AI(1).gif)
