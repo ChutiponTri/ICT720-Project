@@ -14,6 +14,7 @@ class MQTT_Conn():
 
     def on_connect(self, client, userdata, connect_flags, reason_code, properties):
         print(f"Connected {reason_code}")
+        self.client.subscribe("ton/server/devices")
 
     def on_disconnect(self, client, userdata, disconnect_flags, reason_code, properties):
         print(f"Disconnected reason {reason_code}")
@@ -23,7 +24,7 @@ class MQTT_Conn():
         print(mid, reason_code)
 
     def on_message(self, client, userdata, message):
-        print(message)
+        print(f"{message.topic}: {message.payload}")
 
     def publish(self, topic, message:str):
         self.client.publish(topic, message.encode())
@@ -39,5 +40,4 @@ class MQTT_Conn():
 
 if __name__ == '__main__':
     client = MQTT_Conn()
-    client.publish("ton/server/mai", "Not Classroom")
     client.run()
