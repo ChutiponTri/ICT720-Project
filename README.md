@@ -144,12 +144,15 @@ TP-Link Smart Home
 
 ## Demonstration
 
-<p align="center">
-  <img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/go%20around.gif" width="400">
-  <img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/Light%20Switch.gif" width="400">
-  <img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/Grafana.gif" width="400">
-  <img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/Falling.gif" width="400">
-  <img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/Vision%20AI(1).gif" width="400">
-</p>
+<img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/go%20around.gif" width="100%">
+
+<img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/Light%20Switch.gif" width="100%">
+
+<img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/Grafana.gif" width="100%">
+
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/Falling.gif" width="100%">
+
+<img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/Vision%20AI(1).gif" width="100%">
+
 
 
