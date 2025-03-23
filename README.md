@@ -3,6 +3,12 @@ Repo for demo idea, and code for ICT720 course 2025.
 
 # Group Onii-Chan
 ## WheelSense: Development of Automation System for Wheelchair User 
+
+## Our Members
+1. Chutipon Trirattananurak ID: 6722040786 (chutipon.trir@gmail.com)
+2. Natthapol Sangkool ID: 6722040679 (petch.grenger@gmail.com)
+3. Kazuma Yoshida ID: Institute of Science Tokyo (kazu0706tokyotech@gmail.com)
+
 <p>&nbsp;&nbsp;&nbsp;&nbsp;People with mobility impairments, especially wheelchair users, often face challenges in controlling home appliances and monitoring their daily activity. This project aims to create a smart environment that enhances accessibility, convenience, and safety using M5Capsule, T-SIM camera, Raspberry Pi, and Tapo smart plug.</p>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;The system works by tracking the wheelchair user’s motion and detecting their proximity to automate appliance control and provide activity monitoring. When the user moves, the M5Capsule transmits motion data via Wi-Fi to a server, allowing caregivers to monitor their daily movement patterns. Additionally, a T-SIM camera detects the wheelchair’s Bluetooth signal and sends commands to a Raspberry Pi, which controls a Tapo smart plug to turn on or off appliances like lights, fans, or TVs.</p>
@@ -22,11 +28,6 @@ Repo for demo idea, and code for ICT720 course 2025.
     - Ensure that lights, fans, or other devices only operate when needed, reducing power consumption.
 5. To provide remote monitoring and manual control
     - Develop an interface for caregivers or users to view motion data and manually control appliances if necessary.
-
-## Our Members
-1. Chutipon Trirattananurak ID: 6722040786 (chutipon.trir@gmail.com)
-2. Natthapol Sangkool ID: 6722040679 (petch.grenger@gmail.com)
-3. Kazuma Yoshida ID: Institute of Science Tokyo (kazu0706tokyotech@gmail.com)
 
 ## Stakeholders
 ### Primary Stakeholders:
