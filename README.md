@@ -1,4 +1,4 @@
-# ICT720-project-2025
+![image](https://github.com/user-attachments/assets/648c6465-1471-4f0a-8b43-966d3a2bf1fd)# ICT720-project-2025
 Repo for demo idea, and code for ICT720 course 2025. 
 
 # Group Onii-Chan
@@ -151,6 +151,8 @@ TP-Link Smart Home
 <img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/Grafana.gif" width="100%">
 
 <img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/Falling.gif" width="100%">
+
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/Web UI.gif" width="100%">
 
 <img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/Vision%20AI(1).gif" width="100%">
 
