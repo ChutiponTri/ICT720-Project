@@ -1,0 +1,6 @@
+pymongo
+fastapi[standard]
+pydantic
+python-dotenv
+numpy
+pandas
