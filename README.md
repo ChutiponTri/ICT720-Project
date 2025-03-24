@@ -47,7 +47,7 @@ Repo for demo idea, and code for ICT720 course 2025.
 ## Hardwares
 <img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/M5StickC.png" alt="alt text" width="400">
 
-M5Stack Capsule Kit w/ M5StampS3 ( M5Stack Capsule Kit w/ M5StampS3)
+M5StickC Built-in 3-axis accelerometer and 3-axis gyroscope
 - [Documentation](https://docs.m5stack.com/en/core/m5stickc)
 - [Library](https://github.com/m5stack/M5StickC)
 
