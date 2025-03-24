@@ -1,0 +1,85 @@
+version: "3.1"
+
+services:
+  # MongoDB Service
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      TZ: "Asia/Bangkok"
+    env_file:
+      - .env
+    networks:
+      - app-networks
+
+  # Mongo Express (MongoDB Admin UI)
+  mongo-express:
+    image: mongo-express
+    ports:
+      - "8081:8081"
+    environment:
+      TZ: "Asia/Bangkok"
+    env_file:
+      - .env
+    networks:
+      - app-networks
+
+  # FastAPI Service
+  fastapi:
+    build: ./backend
+    container_name: backend
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8305"]
+    volumes:
+      - ./backend:/app  # Maps the current directory to /app inside the container
+    ports:
+      - "8305:8305"
+    depends_on:
+      - mongo  # Corrected dependency
+    environment:
+      TZ: "Asia/Bangkok"
+    env_file:
+      - .env
+    networks:
+      - app-networks
+
+  # Next App
+  frontend:
+    build: ./frontend  # This will always trigger a rebuild from the latest local changes
+    container_name: frontend
+    command: ["npm", "run", "dev"]
+    # command: ["/bin/sh", "-c", "npm run build && npm start"]
+    volumes:
+      - ./frontend:/app
+      # - /app/node_modules  # Prevents overwriting node_modules
+    ports:
+      - "3000:3000"
+    depends_on:
+      - fastapi
+    networks:
+      - app-networks
+    environment:
+      TZ: "Asia/Bangkok"
+    env_file:
+      - .env
+
+  # Ngrok Service
+  ngrok:
+    image: ngrok/ngrok
+    container_name: ngrok_fastapi
+    restart: unless-stopped
+    command:
+      - "http"
+      - "fastapi:8305"  # Internal FastAPI service
+    env_file:
+      - .env
+    ports:
+      - "4040:4040"  # Web UI for ngrok
+    networks:
+      - app-networks
+    depends_on:
+      - fastapi
+
+networks:
+  app-networks:
+    driver: bridge
