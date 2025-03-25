@@ -1,5 +1,4 @@
-#include <Arduino.h>
-#include <ArduinoJSON.h>
+#include <M5Unified.h>
 #include <Wire.h>
 #include <SparkFun_BMI270_Arduino_Library.h>
 #include <WiFi.h>
@@ -18,10 +17,10 @@ const char* topic = "ton/server/m5";
 const int mqtt_port = 1883;
 
 // Function Declaration
-void setup_ble(void);
 void setup_wifi(void);
 void callback(char* topic, byte* payload, unsigned int length);
 void reconnect(void);
+void setup_ble(void);
 
 // Initialize WiFi
 WiFiClient espClient;
@@ -29,6 +28,7 @@ PubSubClient client(espClient);
 
 // Initialize Sensor
 BMI270 m5IMU;
+
 uint8_t i2cAddress = BMI2_I2C_SEC_ADDR; // 0x69
 
 // Create Data
@@ -41,18 +41,17 @@ struct IMUData{
   float gyroZ;
 };
 
-// Create Data
-IMUData data_buf[5];
-int data_count = 0;
-
 void setup(void) {
   // Begin Serial
   Serial.begin(115200);
 
+  // M5Unified configuration
+  auto cfg = M5.config();
+  cfg.internal_imu = true;  // Enable internal IMU
+  M5.begin(cfg);
+
   // Start IMU
-  pinMode(46, OUTPUT); // Set pin 46 as output
-  digitalWrite(46, HIGH); // Set pin 46 to HIGH
-  Wire.begin(8, 10, 400000); // Initialize I2C communication with SDA pin 8 and SCL pin 10 at 400kHz
+  Wire.begin(8, 10, 400000);  // Initialize I2C communication with SDA pin 8 and SCL pin 10 at 400kHz
   m5IMU.beginI2C(i2cAddress);
 
   // Setup BLE
@@ -72,6 +71,10 @@ void loop(void) {
   }
   client.loop();
 
+  // Create Data
+  static IMUData data_buf[5];
+  static int data_count = 0;
+
   // Store Data in Buffer
   m5IMU.getSensorData();
   data_buf[data_count].accelX = m5IMU.data.accelX;
@@ -86,28 +89,31 @@ void loop(void) {
   if (data_count >= 5) {
     char buf[256]; // Make sure the buffer is large enough
     snprintf(buf, sizeof(buf),
-             "{\"axm\":[%.2f,%.2f,%.2f,%.2f,%.2f],"
-             "\"aym\":[%.2f,%.2f,%.2f,%.2f,%.2f],"
-             "\"azm\":[%.2f,%.2f,%.2f,%.2f,%.2f],"
-             "\"gxm\":[%.2f,%.2f,%.2f,%.2f,%.2f],"
-             "\"gym\":[%.2f,%.2f,%.2f,%.2f,%.2f],"
-             "\"gzm\":[%.2f,%.2f,%.2f,%.2f,%.2f]}",
-             data_buf[0].accelX, data_buf[1].accelX, data_buf[2].accelX, data_buf[3].accelX, data_buf[4].accelX,
-             data_buf[0].accelY, data_buf[1].accelY, data_buf[2].accelY, data_buf[3].accelY, data_buf[4].accelY,
-             data_buf[0].accelZ, data_buf[1].accelZ, data_buf[2].accelZ, data_buf[3].accelZ, data_buf[4].accelZ,
-             data_buf[0].gyroX, data_buf[1].gyroX, data_buf[2].gyroX, data_buf[3].gyroX, data_buf[4].gyroX,
-             data_buf[0].gyroY, data_buf[1].gyroY, data_buf[2].gyroY, data_buf[3].gyroY, data_buf[4].gyroY,
-             data_buf[0].gyroZ, data_buf[1].gyroZ, data_buf[2].gyroZ, data_buf[3].gyroZ, data_buf[4].gyroZ
+      "{\"axm\":[%.2f,%.2f,%.2f,%.2f,%.2f],"
+      "\"aym\":[%.2f,%.2f,%.2f,%.2f,%.2f],"
+      "\"azm\":[%.2f,%.2f,%.2f,%.2f,%.2f],"
+      "\"gxm\":[%.2f,%.2f,%.2f,%.2f,%.2f],"
+      "\"gym\":[%.2f,%.2f,%.2f,%.2f,%.2f],"
+      "\"gzm\":[%.2f,%.2f,%.2f,%.2f,%.2f]}",
+      data_buf[0].accelX, data_buf[1].accelX, data_buf[2].accelX, data_buf[3].accelX, data_buf[4].accelX,
+      data_buf[0].accelY, data_buf[1].accelY, data_buf[2].accelY, data_buf[3].accelY, data_buf[4].accelY,
+      data_buf[0].accelZ, data_buf[1].accelZ, data_buf[2].accelZ, data_buf[3].accelZ, data_buf[4].accelZ,
+      data_buf[0].gyroX, data_buf[1].gyroX, data_buf[2].gyroX, data_buf[3].gyroX, data_buf[4].gyroX,
+      data_buf[0].gyroY, data_buf[1].gyroY, data_buf[2].gyroY, data_buf[3].gyroY, data_buf[4].gyroY,
+      data_buf[0].gyroZ, data_buf[1].gyroZ, data_buf[2].gyroZ, data_buf[3].gyroZ, data_buf[4].gyroZ
     );
+    Serial.println(buf);
 
     if (client.publish(topic, buf)) {
       Serial.println("Publish successful!");
-      data_count = 0; // Reset buffer
+      
     } else {
       Serial.println("Publish failed...");
-      data_count = 0;
     }
+    memset(data_buf, 0, sizeof(data_buf));
+    data_count = 0;
   }
+  
   delay(100);
 }
 
