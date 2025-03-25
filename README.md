@@ -107,13 +107,13 @@ TP-Link Smart Home
 <img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/raspberry_pi_state_diagram.png" alt="alt text" width="400">
 
 ## Sequence Diagram
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/seq_c.png" alt="alt text" width="600">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/seq_c.png" alt="alt text" width="100%">
 
 ## Data Flow Process
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/flow_c.png" alt="alt text" width="600">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/flow_c.png" alt="alt text" width="100%">
 
 ## Data Modeling
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/Data%20Modeling.PNG" alt="alt text" width="600">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/Data%20Modeling.PNG" alt="alt text" width="100%">
 
 ## Benefits of the System
 - Enhanced Accessibility – Provides independent appliance control for wheelchair users.
@@ -137,7 +137,7 @@ TP-Link Smart Home
 5. Edge AI for Proximity Detection Optimization
     - Train an AI model to enhance Bluetooth-based proximity detection, reducing false activations.
 
-<img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/wheelchair.png" alt="alt text" width="400">
+<img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/wheelchair.png" alt="alt text" width="500">
 
 ## Conclusion
 <p>&nbsp;&nbsp;&nbsp;&nbsp;This project aims to enhance the quality of life for wheelchair users by integrating motion tracking, proximity-based automation, and smart home control. By leveraging AI in future iterations, the system can provide predictive analytics, fall detection, and adaptive automation, further improving safety, accessibility, and energy efficiency.</p>
