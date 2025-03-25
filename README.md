@@ -113,7 +113,7 @@ TP-Link Smart Home
 <img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/flow_c.png" alt="alt text" width="100%">
 
 ## Data Modeling
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/Data%20Modeling.PNG" alt="alt text" width="500">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/Data%20Modeling.PNG" alt="alt text" width="600">
 
 ## Benefits of the System
 - Enhanced Accessibility – Provides independent appliance control for wheelchair users.
