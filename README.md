@@ -98,13 +98,13 @@ TP-Link Smart Home
 
 ## State Diagram
 ### 1. M5StickC State Diagram
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/M5StickC_State.png" alt="alt text" width="400">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/m5_new.png" alt="alt text" width="400">
 
 ### 2. T-SIMCAM State Diagram
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/t_simcam_state_diagram.png" alt="alt text" width="400">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/tsim_new.png" alt="alt text" width="400">
 
 ### 3. Raspberry Pi State Diagram
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/raspberry_pi_state_diagram.png" alt="alt text" width="400">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/raspi_new.png" alt="alt text" width="400">
 
 ## Sequence Diagram
 <img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/seq_c.png" alt="alt text" width="100%">
