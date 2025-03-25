@@ -76,7 +76,7 @@ TP-Link Smart Home
 - [Tapo P100](https://www.tp-link.com/th/home-networking/smart-plug/tapo-p100/)
 
 ## System Architecture
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/overview.png" alt="alt text" width="600">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/overview.png" alt="alt text" width="100%">
 
 1. Motion Tracking & Activity Monitoring
     - M5StickC: Attaches to the wheelchair and collects motion data.
@@ -113,7 +113,7 @@ TP-Link Smart Home
 <img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/flow_c.png" alt="alt text" width="100%">
 
 ## Data Modeling
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/Data%20Modeling.PNG" alt="alt text" width="100%">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/Data%20Modeling.PNG" alt="alt text" width="500">
 
 ## Benefits of the System
 - Enhanced Accessibility – Provides independent appliance control for wheelchair users.
