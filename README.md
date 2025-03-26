@@ -91,7 +91,7 @@ TP-Link Smart Home
     - Smart Power Management: Appliances turn off automatically when the user exits a room.
 4. Remote Monitoring & Manual Control
     - Cloud Dashboard/App: Allows caregivers and users to view motion data.
-    - Manual Appliances Control: Users can turn appliances on/off through a smartphone app.
+    - Manual Appliances Control: Users can turn appliances on/off through smartphone.
 
 ## Software Architecture
 <img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/software_arch_c.png" alt="alt text" width="100%">
