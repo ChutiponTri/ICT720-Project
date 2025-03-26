@@ -152,11 +152,11 @@ TP-Link Smart Home
 ### Grafana Visualization
 <img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/Grafana.gif" width="100%">
 
-### Falling Notification
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/Falling.gif" width="100%">
-
 ### Web-Based User Interface
 <img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/Web UI.gif" width="100%">
+
+### Falling Notification
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/Falling.gif" width="100%">
 
 ### Edge AI Future Integration
 <img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/Vision%20AI(1).gif" width="100%">
