@@ -19,5 +19,9 @@ void setup(void) {
 }
 
 void loop(void) {
+  if (!client.connected()){
+    reconnect();
+  }
+  client.loop();
   vTaskDelay(1000);
 }

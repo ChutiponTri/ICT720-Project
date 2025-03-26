@@ -12,10 +12,6 @@ void comm_init(void) {
 void comm_task(void *pvParam) {
   comm_init();
   while(1) {
-    if (!client.connected()){
-        reconnect();
-    }
-    client.loop();
     float data;
     xQueueReceive(queue, &data, portMAX_DELAY);
 
