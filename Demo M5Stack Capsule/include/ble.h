@@ -6,7 +6,8 @@
 #include <BLEAdvertising.h>
 
 // Function Declaration
-void setup_ble(void);
+void ble_init(void);
+void ble_task(void *pvParam);
 
 // Global Variables
 
