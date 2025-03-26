@@ -12,7 +12,7 @@ void comm_init(void) {
 void comm_task(void *pvParam) {
   comm_init();
   while(1) {
-    float data;
+    SensorData data;
     xQueueReceive(queue, &data, portMAX_DELAY);
 
     char buf[96];
@@ -23,7 +23,7 @@ void comm_task(void *pvParam) {
       "\"gxm\":[%.2f],"
       "\"gym\":[%.2f],"
       "\"gzm\":[%.2f]}",
-      ax, ay, az, gx, gy, gz
+      data.ax, data.ay, data.az, data.gx, data.gy, data.gz
     );
     client.publish(mqtt_topic, buf);
     Serial.println(buf);

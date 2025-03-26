@@ -19,14 +19,15 @@ void sensor_task(void *pvParam) {
   xLastWakeTime = xTaskGetTickCount();
   while(1) {
     m5IMU.getSensorData();
-    ax = m5IMU.data.accelX;
-    ay = m5IMU.data.accelY;
-    az = m5IMU.data.accelZ;
-    gx = m5IMU.data.gyroX;
-    gy = m5IMU.data.gyroY;
-    gz = m5IMU.data.gyroZ;
+    SensorData data;
+    data.ax = m5IMU.data.accelX;
+    data.ay = m5IMU.data.accelY;
+    data.az = m5IMU.data.accelZ;
+    data.gx = m5IMU.data.gyroX;
+    data.gy = m5IMU.data.gyroY;
+    data.gz = m5IMU.data.gyroZ;
 
-    xQueueSend(queue, &ax, 0);
+    xQueueSend(queue, &data, 0);
     xTaskDelayUntil(&xLastWakeTime, xFrequency);
   }
 }

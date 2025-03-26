@@ -11,11 +11,11 @@ void setup(void) {
   M5.begin(config);
 
   setup_wifi();
-  setup_ble();
 
-  queue = xQueueCreate(10, sizeof(float));
+  queue = xQueueCreate(10, sizeof(SensorData));
   xTaskCreate(sensor_task, "SENSOR_TASK", 4096, NULL, 3, NULL);
   xTaskCreate(comm_task, "COMM_TASK", 4096, NULL, 2, NULL);
+  xTaskCreatePinnedToCore(ble_task, "BLE_TASK", 4096, NULL, 3, NULL, 1);
 }
 
 void loop(void) {
