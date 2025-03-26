@@ -6,7 +6,7 @@
 // Glabal Variables
 extern BMI270 m5IMU;
 extern QueueHandle_t queue;
-extern float sensorData[6];
+extern float ax, ay, az, gx, gy, gz;
 
 // Global Functions
 void sensor_init(void);
