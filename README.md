@@ -146,6 +146,9 @@ TP-Link Smart Home
 ### Smart Device Control
 <img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/Light%20Switch.gif" width="100%">
 
+### Room Changing
+<img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/rooms.gif" width="100%">
+
 ### Moving Around
 <img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/go%20around.gif" width="100%">
 
