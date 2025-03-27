@@ -8,8 +8,6 @@ uint8_t data_count = 0;
 void sensor_init(void) {
   M5.begin();
   M5.Imu.Init();
-  M5.Lcd.begin();
-  M5.Lcd.setRotation(3);
 }
 
 void sensor_task(void *pvParam) {

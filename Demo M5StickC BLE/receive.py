@@ -13,7 +13,6 @@ def notification_handler(sender, data):
 # Asynchronous function to run the BLE communication
 async def run_func(address):
     async with BleakClient(address) as client:
-
         x = client.is_connected
         hex = await client.read_gatt_char(NAME_UUID)
         name = hex.decode()

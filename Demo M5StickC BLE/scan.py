@@ -3,9 +3,8 @@ import asyncio
 
 async def async_scan():
     device = await BleakScanner.find_device_by_filter(
-        lambda dev, adv: dev.name and "m5stickc" in dev.name.lower()
+        lambda dev, adv: dev.name and "m5" in dev.name.lower()
     )
-
     if device:
         print(device.name, device.address)
     else:

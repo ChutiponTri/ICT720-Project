@@ -18,8 +18,7 @@ void comm_init(void) {
   snprintf(addr, sizeof(addr), "%02X:%02X:%02X:%02X:%02X:%02X",
     uuid[0], uuid[1], uuid[2], uuid[3], uuid[4], uuid[5]
   );
-
-  BLEDevice::init("M5Capsule");
+  BLEDevice::init(deviceName);
   pServer = BLEDevice::createServer();
   pServer->setCallbacks(new MyServerCallbacks());
 
