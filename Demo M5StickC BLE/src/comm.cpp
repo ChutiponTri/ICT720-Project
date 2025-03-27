@@ -18,7 +18,9 @@ void comm_init(void) {
   snprintf(addr, sizeof(addr), "%02X:%02X:%02X:%02X:%02X:%02X",
     uuid[0], uuid[1], uuid[2], uuid[3], uuid[4], uuid[5]
   );
-  BLEDevice::init(deviceName);
+
+  std::string dev = std::string(devName);
+  BLEDevice::init(dev);
   pServer = BLEDevice::createServer();
   pServer->setCallbacks(new MyServerCallbacks());
 

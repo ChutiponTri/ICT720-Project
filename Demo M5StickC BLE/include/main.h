@@ -7,7 +7,7 @@
 
 // Definition
 #define TAG "main"
-const std::string deviceName = "M5Capsule";
+#define devName "M5Capsule"
 
 // Global Variable
 extern QueueHandle_t queue;
