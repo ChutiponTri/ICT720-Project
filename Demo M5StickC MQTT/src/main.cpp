@@ -14,7 +14,7 @@ void setup(void) {
   xTaskCreate(sensor_task, "SENSOR_TASK", 2048, NULL, 3, NULL);
   xTaskCreate(comm_task, "COMM_TASK", 4096, NULL, 2, NULL);
   xTaskCreate(lcd_task, "LCD_TASK", 2048, NULL, 1, NULL);
-  xTaskCreatePinnedToCore(ble_task, "BLE_TASK", 2048, NULL, 3, NULL, 1);
+  xTaskCreatePinnedToCore(ble_task, "BLE_TASK", 4096, NULL, 3, NULL, 1);
 }
 
 void loop(void) {
@@ -23,5 +23,5 @@ void loop(void) {
   }
   client.loop();
 
-  vTaskDelay(1000);
+  vTaskDelay(1000 / portTICK_PERIOD_MS);
 }

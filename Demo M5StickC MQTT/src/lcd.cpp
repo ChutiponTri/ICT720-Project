@@ -12,6 +12,8 @@ void lcd_task(void *pvParam) {
   const TickType_t xFrequency = 1000;
   xLastWakeTime = xTaskGetTickCount();
   while(1) {
+    M5.Lcd.fillScreen(BLACK);
+    
     M5.Lcd.setCursor(0, 10);
     M5.Lcd.print("TON M5");
 

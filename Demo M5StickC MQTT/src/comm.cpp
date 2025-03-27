@@ -49,7 +49,7 @@ void setup_wifi(void) {
   Serial.println(ssid);
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
+    vTaskDelay(500 / portTICK_PERIOD_MS);
     Serial.print(".");
   }
   Serial.println("");
@@ -90,7 +90,7 @@ void reconnect(void) {
       Serial.print("failed, rc=");
       Serial.print(client.state());
       Serial.println(" try again in 5 seconds");
-      vTaskDelay(5000);
+      vTaskDelay(5000 / portTICK_PERIOD_MS);
     }
   }
 }
