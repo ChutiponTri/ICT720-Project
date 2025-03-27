@@ -2,7 +2,8 @@
 #include "sensor.h"
 #include "comm.h"
 
-float ax, ay, az, gx, gy, gz;
+IMUdata data_buf[5];
+uint8_t data_count = 0;
 
 void sensor_init(void) {
   M5.begin();
@@ -17,10 +18,12 @@ void sensor_task(void *pvParam) {
   const TickType_t xFrequency = 100;
   xLastWakeTime = xTaskGetTickCount();
   while(1) {
-    M5.Imu.getAccelData(&ax, &ay, &az);
-    M5.Imu.getGyroData(&gx, &gy, &gz);
+    M5.Imu.getAccelData(&data_buf[data_count].ax, &data_buf[data_count].ay, &data_buf[data_count].az);
+    M5.Imu.getGyroData(&data_buf[data_count].gx, &data_buf[data_count].gy, &data_buf[data_count].gz);
 
-    xQueueSend(queue, &ax, 0);
+    xQueueSend(queue, &data_count, 0);
+    data_count = (data_count == 4) ? 0 : data_count + 1;
+
     xTaskDelayUntil(&xLastWakeTime, xFrequency);
   }
 }

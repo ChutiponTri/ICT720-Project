@@ -16,19 +16,19 @@ void lcd_task(void *pvParam) {
     M5.Lcd.print("TON M5");
 
     M5.Lcd.setCursor(10, 30);
-    M5.Lcd.printf("ax: %.2f", ax);
+    M5.Lcd.printf("ax: %.2f", data_buf[data_count].ax);
     M5.Lcd.setCursor(90, 30); // Adjust x-coordinate for spacing
-    M5.Lcd.printf("gx: %.2f", gx);
+    M5.Lcd.printf("gx: %.2f", data_buf[data_count].gx);
 
     M5.Lcd.setCursor(10, 40);
-    M5.Lcd.printf("ay: %.2f", ay);
+    M5.Lcd.printf("ay: %.2f", data_buf[data_count].ay);
     M5.Lcd.setCursor(90, 40);
-    M5.Lcd.printf("gy: %.2f", gy);
+    M5.Lcd.printf("gy: %.2f", data_buf[data_count].gy);
 
     M5.Lcd.setCursor(10, 50);
-    M5.Lcd.printf("az: %.2f", az);
+    M5.Lcd.printf("az: %.2f", data_buf[data_count].az);
     M5.Lcd.setCursor(90, 50);
-    M5.Lcd.printf("gz: %.2f", gz);
+    M5.Lcd.printf("gz: %.2f", data_buf[data_count].gz);
 
     vTaskDelayUntil(&xLastWakeTime, xFrequency);
   }
