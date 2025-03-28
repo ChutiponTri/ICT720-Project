@@ -4,6 +4,7 @@
 
 WiFiClient espClient;
 PubSubClient client(espClient);
+String name
 
 void comm_init(void) {
   setup_mqtt();
@@ -60,7 +61,7 @@ void setup_wifi(void) {
 
 // Function to Setup MQTT
 void setup_mqtt(void) {
-  String name = "M5Capsule-Client-" + String(random(0xffff), HEX);
+  name = "M5Capsule-Client-" + String(random(0xffff), HEX);
   client.setServer(mqtt_server, mqtt_port);
   client.connect(name.c_str());
   client.setCallback(callback);
@@ -80,9 +81,9 @@ void callback(char* topic, byte* payload, unsigned int length) {
 
 // Function to Reconnect MQTT
 void reconnect(void) {
-  String name = "M5Capsule-Client-" + String(random(0xffff), HEX);
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
+    name = "M5Capsule-Client-" + String(random(0xffff), HEX);
     if (client.connect(name.c_str())) {
       Serial.println("connected");
       client.subscribe(mqtt_sub);
