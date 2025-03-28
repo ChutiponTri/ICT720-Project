@@ -45,7 +45,7 @@ Repo for demo idea, and code for ICT720 course 2025.
 5. As a **<ins>wheelchair user</ins>**, I want to be **able to manually turn appliances on/off** via a smartphone app so that I have control when needed.
 
 ## Hardwares
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/M5Capsule.png" alt="alt text" width="400">
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/m5capsule.png" alt="alt text" width="400">
 
 M5Stack Capsule Kit w/ M5StampS3
 - [M5Capule](https://shop.m5stack.com/products/m5stack-capsule-kit-w-m5stamps3)
