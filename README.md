@@ -48,8 +48,8 @@ Repo for demo idea, and code for ICT720 course 2025.
 <img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/m5capsule.png" alt="alt text" width="400">
 
 M5Stack Capsule Kit w/ M5StampS3
-- [M5Capule](https://shop.m5stack.com/products/m5stack-capsule-kit-w-m5stamps3)
 - [Documentation](https://docs.m5stack.com/en/core/M5Capsule)
+- [M5Capule](https://shop.m5stack.com/products/m5stack-capsule-kit-w-m5stamps3)
 
 ---
 
