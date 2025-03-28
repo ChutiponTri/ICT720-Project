@@ -38,17 +38,23 @@ bool sent = false;
 uint8_t dev_count = 0;
 uint8_t neg_count = 0;
 
-int temp;
+uint8_t temp = 0;
 uint8_t not_found = 0;
 
 char buf[128];
 
+String clientName;
+JsonDocument doc;
+char pub[128];
+int rssi;
+std::string name;
+
 class MyAdvertisedDeviceCallbacks : public BLEAdvertisedDeviceCallbacks {
   void onResult(BLEAdvertisedDevice advertisedDevice) {
-    std::string name = advertisedDevice.getName().c_str();
+    name = advertisedDevice.getName().c_str();
     if (name.empty()) return;  // Skip if name is empty or invalid
     if (name.find(dev_name) != std::string::npos){
-      int rssi = advertisedDevice.getRSSI();
+      rssi = advertisedDevice.getRSSI();
       BLEDevice::getScan()->stop();
       not_found = 0;
       Serial.print(name.c_str());
@@ -146,7 +152,7 @@ void setup_wifi(void){
 // Function to Setup MQTT
 void setup_mqtt(void){
   client.setServer(mqtt_broker, mqtt_port);
-  String clientName = "ClientName-" + String(random(0xffff), HEX);
+  clientName = "ClientName-" + String(random(0xffff), HEX);
   client.connect(clientName.c_str(), config, config);
   client.setCallback(callback_mqtt);
   client.subscribe(get_topic);
@@ -171,7 +177,7 @@ void callback_mqtt(char* topic, byte* payload, unsigned int length){
 void reconnect_mqtt(void){
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
-    String clientName = "Alient-" + String(random(0xffff), HEX);
+    clientName = "Alient-" + String(random(0xffff), HEX);
     if (client.connect(clientName.c_str(), config, config)) {
       Serial.println("connected");
       client.subscribe(get_topic);
@@ -186,14 +192,12 @@ void reconnect_mqtt(void){
 
 // Function to Publish MQTT
 void publish_mqtt(const char* status) {
-  JsonDocument doc;
   doc["room"] = room;
   doc["status"] = status;
 
-  char pub[128];
   serializeJson(doc, pub);
   client.publish(post_topic, pub);
 
   Serial.printf("%sside Room\n", status);
+  doc.clear();
 }
-
