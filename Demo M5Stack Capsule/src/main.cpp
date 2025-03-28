@@ -1,21 +1,21 @@
 #include "main.h"
-#include "ble.h"
 #include "sensor.h"
 #include "comm.h"
+#include "ble.h"
 
 QueueHandle_t queue;
 
 void setup(void) {
   Serial.begin(115200);
-  auto config = M5.config();
-  M5.begin(config);
-
+  pinMode(46, OUTPUT);
+  digitalWrite(46, HIGH);
   setup_wifi();
 
-  queue = xQueueCreate(10, sizeof(SensorData));
-  xTaskCreate(sensor_task, "SENSOR_TASK", 4096, NULL, 3, NULL);
+  queue = xQueueCreate(10, sizeof(uint8_t));
+  
+  xTaskCreate(sensor_task, "SENSOR_TASK", 2048, NULL, 3, NULL);
   xTaskCreate(comm_task, "COMM_TASK", 4096, NULL, 2, NULL);
-  xTaskCreatePinnedToCore(ble_task, "BLE_TASK", 4096, NULL, 3, NULL, 1);
+  xTaskCreate(ble_task, "BLE_TASK", 8192, NULL, 1, NULL);
 }
 
 void loop(void) {
@@ -23,5 +23,6 @@ void loop(void) {
     reconnect();
   }
   client.loop();
-  vTaskDelay(1000);
+  Serial.println("MQTT Connection Running");
+  vTaskDelay(1000 / portTICK_PERIOD_MS);
 }

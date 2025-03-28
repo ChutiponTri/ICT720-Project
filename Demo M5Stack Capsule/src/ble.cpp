@@ -1,4 +1,5 @@
 #include "main.h"
+#include "sensor.h"
 #include "ble.h"
 
 void ble_init(void) {
@@ -11,8 +12,9 @@ void ble_init(void) {
 }
 
 void ble_task(void *pvParam) {
-  ble_init();
-  while(1) {
-    vTaskDelay(1000 / portTICK_PERIOD_MS);  // Adjust delay as needed
+  ble_init();  // Initialize BLE
+  while (1) {
+    Serial.println("BLE Task Running");
+    vTaskDelay(5000 / portTICK_PERIOD_MS);
   }
 }
