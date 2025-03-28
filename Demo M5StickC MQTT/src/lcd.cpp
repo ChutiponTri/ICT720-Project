@@ -13,13 +13,13 @@ void lcd_task(void *pvParam) {
   xLastWakeTime = xTaskGetTickCount();
   while(1) {
     M5.Lcd.fillScreen(BLACK);
-    
+
     M5.Lcd.setCursor(0, 10);
     M5.Lcd.print("TON M5");
 
     M5.Lcd.setCursor(10, 30);
     M5.Lcd.printf("ax: %.2f", data_buf[data_count].ax);
-    M5.Lcd.setCursor(90, 30); // Adjust x-coordinate for spacing
+    M5.Lcd.setCursor(90, 30);
     M5.Lcd.printf("gx: %.2f", data_buf[data_count].gx);
 
     M5.Lcd.setCursor(10, 40);

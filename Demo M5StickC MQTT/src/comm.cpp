@@ -11,12 +11,12 @@ void comm_init(void) {
 
 void comm_task(void *pvParam) {
   comm_init();
+  char buf[256];
+  uint8_t data;
   while(1) {
-    uint8_t data;
     xQueueReceive(queue, &data, portMAX_DELAY);
     
     if (data == 4) {
-      char buf[256];
       snprintf(buf, sizeof(buf),
         "{\"axm\":[%.2f,%.2f,%.2f,%.2f,%.2f],"
         "\"aym\":[%.2f,%.2f,%.2f,%.2f,%.2f],"
