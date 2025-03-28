@@ -44,6 +44,7 @@ void comm_init(void) {
 void comm_task(void *pvParam) {
   comm_init();
   uint8_t data;
+  char buf[96];
   while(1) {
     xQueueReceive(queue, &data, portMAX_DELAY);
 
@@ -53,7 +54,6 @@ void comm_task(void *pvParam) {
     );
 
     if (deviceConnected) {
-      char buf[96];
       snprintf(buf, sizeof(buf),
         "{\"ax\":%.2f,"
         "\"ay\":%.2f,"

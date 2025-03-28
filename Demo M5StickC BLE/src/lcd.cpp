@@ -15,7 +15,7 @@ void lcd_task(void *pvParam) {
     M5.Lcd.fillScreen(BLACK);
 
     M5.Lcd.setCursor(0, 10);
-    M5.Lcd.print("TON M5");
+    M5.Lcd.print(devName);
 
     M5.Lcd.setCursor(10, 30);
     M5.Lcd.printf("ax: %.2f", data_buf.ax);
