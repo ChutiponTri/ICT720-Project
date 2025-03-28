@@ -143,26 +143,39 @@ TP-Link Smart Home
 <p>&nbsp;&nbsp;&nbsp;&nbsp;This project aims to enhance the quality of life for wheelchair users by integrating motion tracking, proximity-based automation, and smart home control. By leveraging AI in future iterations, the system can provide predictive analytics, fall detection, and adaptive automation, further improving safety, accessibility, and energy efficiency.</p>
 
 ## Demonstration
-### Smart Device Control
-<img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/Light%20Switch.gif" width="100%">
+### Smart Device Control  
+<img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/Light%20Switch.gif" width="100%">  
 
-### Room Changing
-<img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/rooms.gif" width="100%">
+<hr>
 
-### Moving Around
-<img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/go%20around.gif" width="100%">
+### Room Changing  
+<img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/rooms.gif" width="100%">  
 
-### Grafana Visualization
-<img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/Grafana.gif" width="100%">
+<hr>
 
-### Web-Based User Interface
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/Web UI.gif" width="100%">
+### Moving Around  
+<img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/go%20around.gif" width="100%">  
 
-### Falling Notification
-<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/Falling.gif" width="100%">
+<hr>
 
-### Edge AI Future Integration
-<img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/Vision%20AI(1).gif" width="100%">
+### Grafana Visualization  
+<img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/Grafana.gif" width="100%">  
+
+<hr>
+
+### Web-Based User Interface  
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/Web%20UI.gif" width="100%">  
+
+<hr>
+
+### Falling Notification  
+<img src="https://raw.githubusercontent.com/ChutiponTri/ict720-project/refs/heads/main/images/Falling.gif" width="100%">  
+
+<hr>
+
+### Edge AI Future Integration  
+<img src="https://github.com/ChutiponTri/ict720-project/blob/main/images/Vision%20AI(1).gif" width="100%">  
+
 
 
 
