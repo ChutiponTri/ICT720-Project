@@ -6,7 +6,7 @@ load_dotenv()
 
 # Function to GET Database Connection
 def get_db_connection():
-    client = MongoClient(os.getenv("ME_CONFIG_MONGODB_URL"))
+    client = MongoClient(os.getenv("DB_ADDRESS"))
     return client
 
 # Function to GET List of Database
